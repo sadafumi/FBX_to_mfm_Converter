@@ -1,10 +1,4 @@
-//-----------------------------------------------------------------------------
-// AT12A242 @’åj÷@2017/6/27 
-//-----------------------------------------------------------------------------
 
-//-----------------------------------------------------------------------------
-// ƒƒCƒ“ƒwƒbƒ_			@@
-//-----------------------------------------------------------------------------
 #ifndef __MFM_H__
 #define __MFM_H__
 
@@ -43,7 +37,7 @@ namespace mfmlib
 	{
 	public:
 		std::vector<float> weight;
-		std::vector<int> index;//directx‚Å‚Â‚©‚¤‚Æ‚«‚Íunsigned‚¾‚¯‚Ç³‚Ì”‚µ‚©‚Í‚¢‚ç‚ñ‚©‚ç‚½‚Ô‚ñ‘åä•v
+		std::vector<int> index;//directxã§ã¤ã‹ã†ã¨ãã¯unsignedã ã‘ã©æ­£ã®æ•°ã—ã‹ã¯ã„ã‚‰ã‚“ã‹ã‚‰ãŸã¶ã‚“å¤§ä¸ˆå¤«
 	};
 	struct Material
 	{
@@ -69,7 +63,7 @@ namespace mfmlib
 	class Mesh
 	{
 	public:
-		//ƒf[ƒ^‚ğo‚µ“ü‚ê‚·‚éƒNƒ‰ƒXŒQ
+		//ãƒ‡ãƒ¼ã‚¿ã‚’å‡ºã—å…¥ã‚Œã™ã‚‹ã‚¯ãƒ©ã‚¹ç¾¤
 		std::vector<Float3> Vertex;
 		std::vector<Float3> Normals;
 		std::vector<UV> UV;
@@ -79,19 +73,19 @@ namespace mfmlib
 	private:
 	};
 
-	//ƒtƒ@ƒCƒ‹‚ÌIO‚Ég‚¤ƒNƒ‰ƒX
-	//ŠÖ”‚Æ‚µ‚Ä’è‹`‚µ‚ÄŠÖ”‚ÅIO‚ğs‚¤
+	//ãƒ•ã‚¡ã‚¤ãƒ«ã®IOã«ä½¿ã†ã‚¯ãƒ©ã‚¹
+	//é–¢æ•°ã¨ã—ã¦å®šç¾©ã—ã¦é–¢æ•°ã§IOã‚’è¡Œã†
 	class Model
 	{
 	public:
-		std::vector<Mesh>		Meshs;		//ƒƒbƒVƒ…‚ÌÀƒf[ƒ^
-		std::vector<Material>	Material;	//ƒ}ƒeƒŠƒAƒ‹‚ÌÀƒf[ƒ^
-		std::vector<Skeleton>	Bone;		//Mesh‚Ì”‚¾‚¯
+		std::vector<Mesh>		Meshs;		//ãƒ¡ãƒƒã‚·ãƒ¥ã®å®Ÿãƒ‡ãƒ¼ã‚¿
+		std::vector<Material>	Material;	//ãƒãƒ†ãƒªã‚¢ãƒ«ã®å®Ÿãƒ‡ãƒ¼ã‚¿
+		std::vector<Skeleton>	Bone;		//Meshã®æ•°ã ã‘
 
-		bool FileSaveMeshData(const char* Filename);//ƒtƒ@ƒCƒ‹–¼‚ğw’è‚µ‚ÄƒƒbƒVƒ…‚¾‚¯‚ğ•Û‘¶‚·‚é
-		bool FileLoadMeshData(const char* Filename);//ƒtƒ@ƒCƒ‹–¼‚ğw’è‚µ‚ÄƒƒbƒVƒ…‚¾‚¯‚ğ•Û‘¶‚·‚é
-		bool FileSaveFullData(const char* Filename);//ƒtƒ@ƒCƒ‹–¼‚ğw’è‚µ‚Ä‚·‚×‚Ä‚Ìî•ñ‚ğ•Û‘¶‚·‚é
-		bool FileLoadFullData(const char* Filename);//ƒtƒ@ƒCƒ‹–¼‚ğw’è‚µ‚Ä‚·‚×‚Ä‚Ìî•ñ‚ğ•Û‘¶‚·‚é
+		bool FileSaveMeshData(const char* Filename);//ãƒ•ã‚¡ã‚¤ãƒ«åã‚’æŒ‡å®šã—ã¦ãƒ¡ãƒƒã‚·ãƒ¥ã ã‘ã‚’ä¿å­˜ã™ã‚‹
+		bool FileLoadMeshData(const char* Filename);//ãƒ•ã‚¡ã‚¤ãƒ«åã‚’æŒ‡å®šã—ã¦ãƒ¡ãƒƒã‚·ãƒ¥ã ã‘ã‚’ä¿å­˜ã™ã‚‹
+		bool FileSaveFullData(const char* Filename);//ãƒ•ã‚¡ã‚¤ãƒ«åã‚’æŒ‡å®šã—ã¦ã™ã¹ã¦ã®æƒ…å ±ã‚’ä¿å­˜ã™ã‚‹
+		bool FileLoadFullData(const char* Filename);//ãƒ•ã‚¡ã‚¤ãƒ«åã‚’æŒ‡å®šã—ã¦ã™ã¹ã¦ã®æƒ…å ±ã‚’ä¿å­˜ã™ã‚‹
 	private:
 		bool WriteMesh(Mesh* data, FILE* fp);
 		bool ReadMesh(Mesh* data, FILE* fp);
